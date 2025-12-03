@@ -1,0 +1,320 @@
+/* ======== RESET ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111;
+    color: #fff;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =======================
+        HEADER
+   ======================= */
+header {
+    background-color: #0e0e0e;
+    padding: 20px 5%;
+    border-bottom: 2px solid #cc0000;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: #cc0000;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ======== TITULOS ======== */
+h2 {
+    font-size: 32px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+/* =======================
+        EM ALTA (DESIGN MELHORADO)
+   ======================= */
+
+.trending {
+    padding: 60px 5%;
+}
+
+/* Carrossel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 25px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+}
+
+/* Esconde a barra de rolagem nativa */
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Setas */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: none;
+    padding: 18px 22px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 24px;
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.arrow:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 1);
+}
+
+.arrow.left {
+    left: 20px;
+}
+
+.arrow.right {
+    right: 20px;
+}
+
+/* Card do carrossel - Ajustes para o novo layout */
+.carousel .card {
+    flex: 0 0 auto;
+    position: relative;
+    min-width: 250px;
+    width: 250px;
+    padding: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #181818;
+    cursor: pointer;
+}
+
+.carousel .card img {
+    width: 100%;
+    aspect-ratio: 2 / 3; /* Formato de pôster de filme */
+    object-fit: contain;
+    background-color: #000;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    transition: 0.3s ease-in-out;
+}
+
+/* Container de Informações - Efeito de Hover de Streaming */
+.carousel .card .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Efeito ao passar o mouse */
+.carousel .card:hover img {
+    transform: scale(1.05);
+    filter: brightness(0.6);
+}
+
+.carousel .card:hover .info {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Estilos de Conteúdo de Info */
+.carousel .card .rating {
+    display: inline-block;
+    background-color: #e50914;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.carousel .card .rating .star {
+    color: #ffc107;
+    margin-right: 3px;
+}
+
+.carousel .card .title {
+    font-size: 20px;
+    margin: 0 0 5px 0;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.carousel .card .description {
+    font-size: 12px;
+    color: #ccc;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* Botão CTA dentro do card */
+.cta-btn {
+    margin-top: 5px;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    background: #e50914;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    opacity: 0.9;
+}
+
+
+/* =======================
+        EM CARTAZ
+   ======================= */
+
+.cardbox-externo {
+    background: #cc0000;
+    padding: 60px 5%;
+    width: 90%;
+    margin: 50px auto;
+    border-radius: 25px;
+}
+
+.cardbox-externo h2 {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.cardbox-interno {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cardbox-interno .card {
+    width: 150px; /* Largura base para mobile */
+    background: #fff;
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.cardbox-interno .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+/* =======================
+  APROVEITE E LEVE TAMBÉM
+   ======================= */
+
+.sessao.extra {
+    padding: 50px 5%;
+}
+
+.sessao.extra .cards {
+    display: flex;
+    flex-direction: column; /* Colunas em mobile */
+    gap: 20px;
+}
+
+.sessao.extra .cards .card {
+    width: 100%; /* Ocupa a largura total em mobile */
+    height: 120px;
+    background-color: #222;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.sessao.extra .cards .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.sessao.extra .cards .placeholder h3 {
+    font-size: 18px;
+    text-transform: none;
+    font-weight: 400;
+}
+
+
+/* =======================
+        FOOTER
+   ======================= */
+footer {
+    background-color: #0e0e0e;
+    color: #aaa;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid #222;
+}
+
+/* =======================
+        RESPONSIVIDADE (MEDIA QUERIES)
+   ======================= */
+
+/* Desktop */
+@media (min-width: 768px) {
+    .carousel .card {
+        min-width: 270px; /* Largura maior em desktop */
+        width: 270px;
+    }
+
+    .cardbox-interno .card {
+        width: 200px; /* Largura maior em desktop */
+    }
+
+    .sessao.extra .cards {
+        flex-direction: row; /* Volta para linha em desktop */
+        justify-content: space-between;
+    }
+    .sessao.extra .cards .card {
+        width: 32%; /* Ocupa cerca de um terço */
+        height: 160px;
+    }
+}
